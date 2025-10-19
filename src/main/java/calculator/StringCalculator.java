@@ -2,7 +2,7 @@ package calculator;
 
 public class StringCalculator {
     public static int sum(String input){
-        if(input == null) {
+        if(input == null || input.isEmpty()) {
             return 0;
         }
         String[] numbers = split(input);
@@ -24,12 +24,12 @@ public class StringCalculator {
 
         for(String numStr : numbers) {
             if(numStr.isEmpty()){
-                throw new IllegalArgumentException("Empty String");
+                throw new IllegalArgumentException("빈 문자열 입니다.");
             }
             int num = Integer.parseInt(numStr);
 
             if(num<0){
-                throw new IllegalArgumentException("Invalid Input");
+                throw new IllegalArgumentException("음수는 허용되지 않습니다.");
             }
             total += num;
         }
