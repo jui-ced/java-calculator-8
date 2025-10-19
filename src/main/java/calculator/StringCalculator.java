@@ -10,9 +10,14 @@ public class StringCalculator {
     }
 
     private static String[] split(String input){
+        if(input.startsWith("//")){
+            int lineIndex = input.indexOf("\\n");
+            String delimiter = input.substring(2, lineIndex);
+            String numbersPart = input.substring(lineIndex+2);
+            return numbersPart.split(delimiter);
+        }
         return input.split(",|:");
     }
-
 
     private static int sum(String[] numbers){
         int total = 0;
