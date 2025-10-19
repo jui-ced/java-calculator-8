@@ -14,7 +14,7 @@ public class StringCalculator {
             int lineIndex = input.indexOf("\\n");
             String delimiter = input.substring(2, lineIndex);
             String numbersPart = input.substring(lineIndex+2);
-            return numbersPart.split(delimiter);
+            return numbersPart.split(java.util.regex.Pattern.quote(delimiter) + "|,|:");
         }
         return input.split(",|:");
     }
