@@ -23,7 +23,14 @@ public class StringCalculator {
         int total = 0;
 
         for(String numStr : numbers) {
+            if(numStr.isEmpty()){
+                throw new IllegalArgumentException("Empty String");
+            }
             int num = Integer.parseInt(numStr);
+
+            if(num<0){
+                throw new IllegalArgumentException("Invalid Input");
+            }
             total += num;
         }
         return total;
