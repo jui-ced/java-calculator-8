@@ -21,6 +21,11 @@ public class StringCalculator {
 
     private static int sum(String[] numbers){
         int total = 0;
+
+        for(String numStr : numbers) {
+            int num = Integer.parseInt(numStr);
+            total += num;
+        }
         return total;
     }
 }
