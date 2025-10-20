@@ -40,8 +40,8 @@ public class StringCalculator {
 
             try {
                 int num = Integer.parseInt(numStr.trim());
-                if (num < 0) {
-                    throw new IllegalArgumentException("[ERROR] 음수는 허용되지 않습니다: " + num);
+                if (num <= 0) {
+                    throw new IllegalArgumentException("[ERROR] 0또는 음수는 허용되지 않습니다: " + num);
                 }
                 total += num;
             } catch (NumberFormatException e) {
