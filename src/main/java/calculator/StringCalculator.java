@@ -33,7 +33,7 @@ public class StringCalculator {
             // 커스텀 + 기본 구분자 모두 허용
             return numbersPart.split(Pattern.quote(delimiter) + "|,|:");
         }
-        return input.split(",|:");
+        return input.split("[,:]");
     }
 
     /*
